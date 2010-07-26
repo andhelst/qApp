@@ -1,0 +1,22 @@
+<h1>Listing scouts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Info</th>
+  </tr>
+
+<% for scout in @scouts %>
+  <tr>
+    <td><%=h scout.Name %></td>
+    <td><%=h scout.Info %></td>
+    <td><%= link_to 'Show', scout %></td>
+    <td><%= link_to 'Edit', edit_scout_path(scout) %></td>
+    <td><%= link_to 'Destroy', scout, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New scout', new_scout_path %>
